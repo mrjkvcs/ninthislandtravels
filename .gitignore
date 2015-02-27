@@ -1,7 +1,7 @@
 .idea/
 .sass-cache/
 Gulpfile.js
-assets/
+assets/sass/
 node_modules/
 package.json
 vendor/
