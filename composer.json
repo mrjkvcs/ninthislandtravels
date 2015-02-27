@@ -1,0 +1,20 @@
+{
+  "require": {
+    "illuminate/database": "~5.0",
+    "guzzle/guzzle": "3.9.*@dev",
+    "omnipay/paypal": "2.3.*@dev",
+    "fortawesome/font-awesome": "~4.3",
+    "twbs/bootstrap-sass": "~3.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "classes/"
+    },
+    "classmap": [
+        "models"
+    ],
+    "files": [
+      "assets/helper.php"
+    ]
+  }
+}

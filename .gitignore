@@ -1,0 +1,8 @@
+.idea/
+.sass-cache/
+Gulpfile.js
+assets/
+node_modules/
+package.json
+vendor/
+.DS_Store
