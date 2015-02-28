@@ -12,6 +12,7 @@ require('config/database.php');
     <meta charset="UTF-8">
     <title>Document</title>
     <!--<link rel="stylesheet" href="css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,500,700"/>
     <link rel="stylesheet" href="css/formValidation.css"/>
     <link rel="stylesheet" href="css/font-awesome.css"/>
     <link rel="stylesheet" href="css/application.css"/>
@@ -65,7 +66,7 @@ require('config/database.php');
                         <img src="/images/hotels/<?= $product->id; ?>.jpg" alt="<?= $product->name; ?>">
 
                         <div class="caption">
-                            <h3>$<?= $product->price; ?></h3>
+                            <h2 class="color-orange">$<?= $product->price; ?></h2>
 
                             <p><?= $product->name; ?></p>
 
@@ -118,6 +119,13 @@ require('config/database.php');
         </div>
     </div>
 </div>
+<footer>
+    <div class="well">
+        <div class="container text-center">
+            Copyright © 2015
+        </div>
+    </div>
+</footer>
 
 
 <!-- Modal -->
@@ -128,10 +136,10 @@ require('config/database.php');
 <script src="js/base.js"></script>
 <script src="js/helper.js"></script>
 <script src="js/framework/bootstrap.js"></script>
-<script src="js/framework/foundation.js"></script>
-<script src="js/framework/pure.js"></script>
-<script src="js/framework/semantic.js"></script>
-<script src="js/framework/uikit.js"></script>
+<!--<script src="js/framework/foundation.js"></script>-->
+<!--<script src="js/framework/pure.js"></script>-->
+<!--<script src="js/framework/semantic.js"></script>-->
+<!--<script src="js/framework/uikit.js"></script>-->
 
 <script>
     $(document).ready(function () {
@@ -144,9 +152,30 @@ require('config/database.php');
 
             modal.find('.modal-title').text(name)
             modal.find('#productId').val(id)
+        });
 
-            //$('#loginForm').formValidation();
-
+        $('#loginForm').formValidation({
+            framework: 'bootstrap',
+            err: {
+                container: '#messages'
+            },
+            icon: {
+                valid: 'fa fa-check',
+                invalid: 'fa fa-close',
+                validating: 'fa fa-refresh'
+            },
+            fields: {
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The email address is required and cannot be empty'
+                        },
+                        emailAddress: {
+                            message: 'The email address is not valid'
+                        }
+                    }
+                }
+            }
         });
 
     });

@@ -1,4 +1,4 @@
-<div class="bs-example" data-example-id="simple-carousel">
+<div class="bs-example border-bottom-orange" data-example-id="simple-carousel">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
