@@ -6,12 +6,10 @@ $datas = [
     [ 'id' => 'last_name', 'title' => 'Last Name', 'type' => 'text' ],
     [ 'id' => 'birthdate_at', 'title' => 'Date of Birth', 'type' => 'date' ],
     [ 'id' => 'gender', 'title' => 'Gender', 'type' => 'select', 'options' => ['Female', 'Male'] ],
-    [ 'id' => 'place_of_birth', 'title' => 'Place of Birth (city, state)', 'type' => 'text' ],
     [ 'id' => 'nationality', 'title' => 'Nationality', 'type' => 'text' ],
     [ 'id' => 'email', 'title' => 'Email', 'type' => 'email' ],
-    [ 'id' => 'address', 'title' => 'Mail address', 'type' => 'text' ],
+    [ 'id' => 'address', 'title' => 'Mailing address', 'type' => 'text' ],
     [ 'id' => 'phone_home', 'title' => 'Phone (home)', 'type' => 'text' ],
-    [ 'id' => 'phone_work', 'title' => 'Phone (work)', 'type' => 'text' ],
     [ 'id' => 'phone_cell', 'title' => 'Phone (cell)', 'type' => 'text' ],
 ];
 
