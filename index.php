@@ -5,7 +5,6 @@
 
 require('vendor/autoload.php');
 require('config/database.php');
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,45 +17,23 @@ require('config/database.php');
     <link rel="stylesheet" href="css/application.css"/>
 </head>
 <body>
-<div class="bs-example" data-example-id="simple-carousel">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="images/slideshow-1.jpg" slide" alt="First slide">
-            </div>
-            <div class="item">
-                <img src="images/slideshow-2.jpg" slide" alt="First slide">
-            </div>
-        </div>
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
+
+<?php include 'assets/partials/carousel.php'; ?>
 
 <div class="container">
 
     <?php flash(); ?>
 
-    <div class="row">
+    <div class="row text-center">
         <div class="col-md-4">
-            <h1 class="text-center proba">Trust</h1>
+            <h2>Trust</h2>
 
             <p>We are here for you 24/7 and take care of you if things go wrong – Before, during and after your
                 vacation, during hurricanes, strikes and snowstorms. We get it right or we make it right. We have
                 stability and financial security. </p>
         </div>
         <div class="col-md-4">
-            <h1 class="text-center">Knowledge</h1>
+            <h2>Knowledge</h2>
 
             <p>
                 We are well traveled and have been through intensive training, which means we match the right vacation
@@ -65,7 +42,7 @@ require('config/database.php');
             </p>
         </div>
         <div class="col-md-4">
-            <h1 class="text-center">Value</h1>
+            <h2>Value</h2>
 
             <p>
                 We have deals and vacation packages that you won’t get anywhere else. We plan your vacation at no extra
@@ -73,12 +50,12 @@ require('config/database.php');
             </p>
         </div>
     </div>
-    <div class="row">
+    <div class="row text-center">
         <div class="col-md-12">
-            <h1 class="text-center"> Our current offers</h1>
+            <h1> Our current offers</h1>
         </div>
-        <div class="col-md-6 text-center">OUR SPECIALS <br/> AT THE WORLD FAMOUS GOLDEN NUGGET IN DOWNTOWN LAS VEGAS</div>
-        <div class="col-md-6 text-center">OUR SPECIALS AT THE NEWLY REMODELED TROPICANA HOTEL RIGHT ON THE STRIP</div>
+        <div class="col-md-6 mb-30">OUR SPECIALS <br/> AT THE WORLD FAMOUS GOLDEN NUGGET IN DOWNTOWN LAS VEGAS</div>
+        <div class="col-md-6">OUR SPECIALS <br/> AT THE NEWLY REMODELED TROPICANA HOTEL RIGHT ON THE STRIP</div>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -107,19 +84,20 @@ require('config/database.php');
     <div class="row">
         <div class="col-md-12">
             <h1>Services</h1>
+            <div class="services">
+                <p>Ninth Island Travels is a full service agency and offers exclusive travel agency goods and services,
+                    including Airfare and Hotel packages. Additional services include assistance with passports, providing
+                    access to top-of-the-line equipment and supplies, and a superior offering that includes access to better
+                    than average terrain and activities, accommodations, and entertainment. The value added of Ninth Island
+                    Travels offering is its knowledge and expertise, competitive rates, and specialty focus on Hawaii to Las
+                    Vegas travels , which translates into increased satisfaction for the customer. </p>
 
-            <p>Ninth Island Travels is a full service agency and offers exclusive travel agency goods and services,
-                including Airfare and Hotel packages. Additional services include assistance with passports, providing
-                access to top-of-the-line equipment and supplies, and a superior offering that includes access to better
-                than average terrain and activities, accommodations, and entertainment. The value added of Ninth Island
-                Travels offering is its knowledge and expertise, competitive rates, and specialty focus on Hawaii to Las
-                Vegas travels , which translates into increased satisfaction for the customer. </p>
-
-            <p>Economic indicators suggest that an increased demand for Luxury travel services exists. Ninth Island
-                Travels can position itself as a niche service provider within the travel and tourism market and offer
-                high quality travel packages for various leisure trips. Ninth Island Travels will serve the increasing
-                Hawaiian travel market as a top quality, full service provider. All suppliers with whom Ninth Island
-                Travels will deal will be top-notch professionals with accomplished backgrounds.</p>
+                <p>Economic indicators suggest that an increased demand for Luxury travel services exists. Ninth Island
+                    Travels can position itself as a niche service provider within the travel and tourism market and offer
+                    high quality travel packages for various leisure trips. Ninth Island Travels will serve the increasing
+                    Hawaiian travel market as a top quality, full service provider. All suppliers with whom Ninth Island
+                    Travels will deal will be top-notch professionals with accomplished backgrounds.</p>
+            </div>
         </div>
     </div>
     <div class="row">

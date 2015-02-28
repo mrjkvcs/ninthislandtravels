@@ -69,7 +69,7 @@ class Payment {
 
         $this->check($data);
 
-        header('Location: ' . $_SERVER['HTTP_HOST']);
+        header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     }
 
