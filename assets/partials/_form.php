@@ -8,9 +8,9 @@ $datas = [
     [ 'id' => 'gender', 'title' => 'Gender', 'type' => 'select', 'options' => ['Female', 'Male'] ],
     [ 'id' => 'nationality', 'title' => 'Nationality', 'type' => 'text' ],
     [ 'id' => 'email', 'title' => 'Email', 'type' => 'email' ],
-    [ 'id' => 'address', 'title' => 'Mailing address', 'type' => 'text' ],
     [ 'id' => 'phone_home', 'title' => 'Phone (home)', 'type' => 'text' ],
     [ 'id' => 'phone_cell', 'title' => 'Phone (cell)', 'type' => 'text' ],
+    [ 'id' => 'address', 'title' => 'Mailing address', 'type' => 'text', 'col' => 12 ],
 ];
 
 ?>
@@ -29,7 +29,7 @@ $datas = [
                     <?php foreach (array_chunk($datas, 3) as $dataSet): ?>
                         <div class="row">
                             <?php foreach ($dataSet as $data): ?>
-                                <div class="col-md-4">
+                                <div class="col-md-<?= isset($data['col']) ? $data['col'] : 4; ?>">
                                     <div class="form-group">
                                         <label for="<?= $data['id'] ?>" class="control-label"><?= $data['title']; ?></label>
                                         <?php if ($data['type'] == 'select'): ?>

@@ -7166,3 +7166,11 @@ footer .well {
 .thumbnail {
   border: 1px solid #f35d26;
 }
+
+.modal-header {
+  border-bottom: 2px solid #f35d26;
+}
+
+.modal-footer {
+  border-top: 1px solid #f35d26;
+}
