@@ -4,10 +4,10 @@ use Omnipay\Omnipay;
 
 class Payment {
 
-    protected $data;
-    protected $product;
-    protected $price;
-    protected $gateway;
+    public $data;
+    public $product;
+    public $price;
+    public $gateway;
 
     public function __construct($productId)
     {
@@ -21,13 +21,13 @@ class Payment {
         $this->gateway->setTestMode(PaypalConfig::SANDBOX_MODE);
 
         $this->product = $product->name;
-        $this->price = (float) $product->price;
+        $this->price = $product->price;
 
         $this->data = [
             'cancelUrl'   => 'http://' . $_SERVER['SERVER_NAME'] . '/cancel.php',
             'returnUrl'   => 'http://' . $_SERVER['SERVER_NAME'] . '/paypal.php',
             'description' => $this->product,
-            'amount'      => $this->price,
+            'amount'      => (float) $this->price,
             'currency'    => 'USD'
         ];
     }
@@ -69,7 +69,7 @@ class Payment {
 
         $this->check($data);
 
-        header('Location: http://' . $_SERVER['REQUEST_URI']);
+        header('Location: http://' . $_SERVER['HTTP_HOST']);
         exit;
     }
 

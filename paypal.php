@@ -12,6 +12,7 @@ if (isset($_POST) and !empty($_POST))
         if ( ! findMe($key, 'submit')) $_SESSION['data'][$key] = $value;
     }
 
+
     $payment = new Payment($_SESSION['data']['product_id']);
     $payment->payPal();
 }
@@ -19,6 +20,7 @@ if (isset($_POST) and !empty($_POST))
 if (isset($_GET['token']))
 {
     $payment = new Payment($_SESSION['data']['product_id']);
+
     $payment->success();
 }
 
