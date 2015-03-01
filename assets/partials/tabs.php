@@ -43,7 +43,7 @@
             <p>
                 If you have questions or comments about this privacy policy, or if you are concerned that we have not
                 followed the principles set forth in this privacy policy, please send an email to us at
-                <a href="http://www.ninthislandtravels.com" target="_blank"> www.ninthislandtravels.com </a> .We are receptive to your comments or questions
+                <a href="mailto:sales@ninthislandtravels.com"> sales@ninthislandtravels.com </a> .We are receptive to your comments or questions
             </p>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="disclosures" aria-labelledBy="disclosures-tab">

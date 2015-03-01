@@ -116,7 +116,10 @@ require('config/database.php');
                 everything covered for your needs.
             </p>
 
-            <p>Phone: 1-800-925-0770</p>
+            <p>
+                Phone: 1-800-925-0770 <br/>
+                <a href="mailto:sales@ninthislandtravels.com"> sales@ninthislandtravels.com </a>
+            </p>
         </div>
     </div>
 </div>
@@ -146,55 +149,7 @@ require('config/database.php');
 
 <script>
     $(document).ready(function () {
-        //$('#myModal').on('show.bs.modal', function (event) {
-        //
-        //    var button = $(event.relatedTarget),
-        //        id = button.data('id'),
-        //        name = button.data('name'),
-        //        modal = $(this)
-        //
-        //    modal.find('.modal-title').text(name)
-        //    modal.find('#productId').val(id)
-        //});
 
-        //$('#IDofyourform').bootstrapValidator({
-        //    message: 'This value is not valid',
-        //    feedbackIcons: {
-        //        valid: 'fa fa-check',
-        //        invalid: 'fa fa-close',
-        //        validating: 'fa fa-refresh'
-        //    },
-        //    fields: {
-        //        first_name: {
-        //            validators: {
-        //                notEmpty: {
-        //                    message: "You're required to fill in a first name!"
-        //                }, // notEmpty
-        //                regexp: {
-        //                    regexp: /^[A-Za-z\s.'-]+$/,
-        //                    message: "Alphabetical characters, hyphens and spaces"
-        //                }
-        //            } // validators
-        //        },  // firstname
-        //        last_name: {
-        //            validators: {
-        //                notEmpty: {
-        //                    message: "You've forgotten to provide your last name!"
-        //                } // notEmpty
-        //            } // validators
-        //        },  // lastname
-        //        email: {
-        //            validators: {
-        //                notEmpty: {
-        //                    message: "An email address is mandatory."
-        //                }, // notEmpty
-        //                emailAddress: {
-        //                    message: "This is not a valid email address"
-        //                } // emailAddress
-        //            } // validators
-        //        }  // email
-        //    } // fields
-        //});
         $('#myModal').on('shown.bs.modal', function(event) {
             var button = $(event.relatedTarget),
                 id = button.data('id'),
@@ -203,9 +158,90 @@ require('config/database.php');
 
             modal.find('.modal-title').text(name)
             modal.find('#productId').val(id)
-            //$('#IDofyourform').bootstrapValidator('resetForm', true);
+            $('#contactform').bootstrapValidator('resetForm', true);
         });
 
+        $('#contactform').bootstrapValidator({
+            container: "popover",
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'fa fa-check',
+                invalid: 'fa fa-close',
+                validating: 'fa fa-refresh'
+            },
+            fields: {
+                first_name: {
+                    validators: {
+                        notEmpty: {
+                            message: "You're required to fill in a first name!"
+                        },
+                        regexp: {
+                            regexp: /^[A-Za-z\s.'-]+$/,
+                            message: "Alphabetical characters, hyphens and spaces"
+                        }
+                    }
+                },
+                middle_name: {
+                    validators: {
+                        notEmpty: {
+                            message: "You've forgotten to provide your middle name!"
+                        }
+                    }
+                },
+                last_name: {
+                    validators: {
+                        notEmpty: {
+                            message: "You've forgotten to provide your last name!"
+                        }
+                    }
+                },
+                address: {
+                    validators: {
+                        notEmpty: {
+                            message: "You've forgotten to provide your address!"
+                        }
+                    }
+                },
+                phone_home: {
+                    validators: {
+                        notEmpty: {
+                            message: "You've forgotten to provide your phone (home)!"
+                        }
+                    }
+                },
+                phone_cell: {
+                    validators: {
+                        notEmpty: {
+                            message: "You've forgotten to provide your phone (cell)!"
+                        }
+                    }
+                },
+                nationality: {
+                    validators: {
+                        notEmpty: {
+                            message: "You've forgotten to provide your Natinality!"
+                        }
+                    }
+                },
+                birthdate_at: {
+                    validators: {
+                        notEmpty: {
+                            message: "You've forgotten to provide your Natinality!"
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: "An email address is mandatory."
+                        },
+                        emailAddress: {
+                            message: "This is not a valid email address"
+                        }
+                    }
+                }
+            }
+        });
     });
 
 </script>
