@@ -157,44 +157,44 @@ require('config/database.php');
         //    modal.find('#productId').val(id)
         //});
 
-        $('#IDofyourform').bootstrapValidator({
-            message: 'This value is not valid',
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                first_name: {
-                    validators: {
-                        notEmpty: {
-                            message: "You're required to fill in a first name!"
-                        }, // notEmpty
-                        regexp: {
-                            regexp: /^[A-Za-z\s.'-]+$/,
-                            message: "Alphabetical characters, hyphens and spaces"
-                        }
-                    } // validators
-                },  // firstname
-                last_name: {
-                    validators: {
-                        notEmpty: {
-                            message: "You've forgotten to provide your last name!"
-                        } // notEmpty
-                    } // validators
-                },  // lastname
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: "An email address is mandatory."
-                        }, // notEmpty
-                        emailAddress: {
-                            message: "This is not a valid email address"
-                        } // emailAddress
-                    } // validators
-                }  // email
-            } // fields
-        });
+        //$('#IDofyourform').bootstrapValidator({
+        //    message: 'This value is not valid',
+        //    feedbackIcons: {
+        //        valid: 'fa fa-check',
+        //        invalid: 'fa fa-close',
+        //        validating: 'fa fa-refresh'
+        //    },
+        //    fields: {
+        //        first_name: {
+        //            validators: {
+        //                notEmpty: {
+        //                    message: "You're required to fill in a first name!"
+        //                }, // notEmpty
+        //                regexp: {
+        //                    regexp: /^[A-Za-z\s.'-]+$/,
+        //                    message: "Alphabetical characters, hyphens and spaces"
+        //                }
+        //            } // validators
+        //        },  // firstname
+        //        last_name: {
+        //            validators: {
+        //                notEmpty: {
+        //                    message: "You've forgotten to provide your last name!"
+        //                } // notEmpty
+        //            } // validators
+        //        },  // lastname
+        //        email: {
+        //            validators: {
+        //                notEmpty: {
+        //                    message: "An email address is mandatory."
+        //                }, // notEmpty
+        //                emailAddress: {
+        //                    message: "This is not a valid email address"
+        //                } // emailAddress
+        //            } // validators
+        //        }  // email
+        //    } // fields
+        //});
         $('#myModal').on('shown.bs.modal', function(event) {
             var button = $(event.relatedTarget),
                 id = button.data('id'),
@@ -203,7 +203,7 @@ require('config/database.php');
 
             modal.find('.modal-title').text(name)
             modal.find('#productId').val(id)
-            //$('#contactform').bootstrapValidator('resetForm', true);
+            //$('#IDofyourform').bootstrapValidator('resetForm', true);
         });
 
     });
