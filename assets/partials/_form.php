@@ -22,40 +22,31 @@ $datas = [
                 <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
 
-            <form id="IDofyourform" action="paypal.php" method="post">
-
-                <input type="hidden" name="product_id" id="productId" />
+            <form class="form-horizontal" id="contactform" name="commentform" method="post" action="paypal.php">
                 <div class="modal-body">
-                    <?php foreach (array_chunk($datas, 3) as $dataSet): ?>
-                        <div class="row">
-                            <?php foreach ($dataSet as $data): ?>
-                                <div class="col-md-<?= isset($data['col']) ? $data['col'] : 4; ?>">
-                                    <div class="form-group">
-                                        <label for="<?= $data['id'] ?>" class="control-label"><?= $data['title']; ?></label>
-                                        <?php if ($data['type'] == 'select'): ?>
-                                            <select name="<?= $data['id']; ?>" class="form-control">
-                                                <?php foreach($data['options'] as $option) : ?>
-                                                    <option value="<?= $option; ?>"><?= $option; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        <?php else: ?>
-                                            <input type="<?= $data['type']; ?>" class="form-control" name="<?= $data['id'] ?>" >
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endforeach; ?>
+                    <input type="hidden" name="product_id" id="productId" />
+                    <?php foreach($datas as $data): ?>
                     <div class="form-group">
-                        <div class="col-xs-9 col-xs-offset-3">
-                            <ul id="messages"></ul>
+                        <label class="control-label col-md-4" for="<?= $data['id']; ?>"><?= $data['title']; ?></label>
+                        <div class="col-md-6">
+                            <?php if ($data['type'] == 'select'): ?>
+                                <select class="form-control" name="<?= $data['id']; ?>" id="<?= $data['id']; ?>">
+                                    <?php foreach($data['options'] as $option): ?>
+                                        <option value="<?= $option; ?>"><?= $option; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            <?php else: ?>
+                            <input type="<?= $data['type']; ?>" class="form-control" id="<?= $data['id']; ?>" name="<?= $data['id']; ?>" placeholder="<?= $data['title']; ?>"/>
+                            <?php endif; ?>
                         </div>
                     </div>
-
+                    <?php endforeach; ?>
                 </div>
                 <div class="modal-footer">
-                    <input type="image" src="images/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                    <img alt="" border="0" src="images/pixel.gif" width="1" height="1">
+                    <button type="submit" value="Submit" class="btn btn-primary pull-right" id="send_btn">Buy Now</button>
+                    <!--<input type="image" src="images/btn_buynowCC_LG.gif" border="0" id="send_btn" name="submit" alt="PayPal - The safer, easier way to pay online!">-->
+                    <!--<input type="image" src="images/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">-->
+                    <!--<img alt="" border="0" src="images/pixel.gif" width="1" height="1">-->
                 </div>
             </form>
 
