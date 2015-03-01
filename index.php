@@ -13,9 +13,10 @@ require('config/database.php');
     <title>Document</title>
     <!--<link rel="stylesheet" href="css/bootstrap.min.css"/>-->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,500,700"/>
-    <link rel="stylesheet" href="css/formValidation.css"/>
+    <!--<link rel="stylesheet" href="css/formValidation.css"/>-->
     <link rel="stylesheet" href="css/font-awesome.css"/>
     <link rel="stylesheet" href="css/application.css"/>
+    <link rel="stylesheet" href="css/formValidation.css"/>
 </head>
 <body>
 
@@ -119,6 +120,7 @@ require('config/database.php');
         </div>
     </div>
 </div>
+
 <footer>
     <div class="well">
         <div class="container text-center">
@@ -133,9 +135,10 @@ require('config/database.php');
 
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="js/base.js"></script>
-<script src="js/helper.js"></script>
-<script src="js/framework/bootstrap.js"></script>
+<script src="js/bootstrapValidator.min.js"></script>
+<!--<script src="js/base.js"></script>-->
+<!--<script src="js/helper.js"></script>-->
+<!--<script src="js/framework/bootstrap.js"></script>-->
 <!--<script src="js/framework/foundation.js"></script>-->
 <!--<script src="js/framework/pure.js"></script>-->
 <!--<script src="js/framework/semantic.js"></script>-->
@@ -143,8 +146,56 @@ require('config/database.php');
 
 <script>
     $(document).ready(function () {
-        $('#myModal').on('show.bs.modal', function (event) {
+        //$('#myModal').on('show.bs.modal', function (event) {
+        //
+        //    var button = $(event.relatedTarget),
+        //        id = button.data('id'),
+        //        name = button.data('name'),
+        //        modal = $(this)
+        //
+        //    modal.find('.modal-title').text(name)
+        //    modal.find('#productId').val(id)
+        //});
 
+        $('#IDofyourform').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                first_name: {
+                    validators: {
+                        notEmpty: {
+                            message: "You're required to fill in a first name!"
+                        }, // notEmpty
+                        regexp: {
+                            regexp: /^[A-Za-z\s.'-]+$/,
+                            message: "Alphabetical characters, hyphens and spaces"
+                        }
+                    } // validators
+                },  // firstname
+                last_name: {
+                    validators: {
+                        notEmpty: {
+                            message: "You've forgotten to provide your last name!"
+                        } // notEmpty
+                    } // validators
+                },  // lastname
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: "An email address is mandatory."
+                        }, // notEmpty
+                        emailAddress: {
+                            message: "This is not a valid email address"
+                        } // emailAddress
+                    } // validators
+                }  // email
+            } // fields
+        });
+        $('#myModal').on('shown.bs.modal', function(event) {
             var button = $(event.relatedTarget),
                 id = button.data('id'),
                 name = button.data('name'),
@@ -152,30 +203,7 @@ require('config/database.php');
 
             modal.find('.modal-title').text(name)
             modal.find('#productId').val(id)
-        });
-
-        $('#loginForm').formValidation({
-            framework: 'bootstrap',
-            err: {
-                container: '#messages'
-            },
-            icon: {
-                valid: 'fa fa-check',
-                invalid: 'fa fa-close',
-                validating: 'fa fa-refresh'
-            },
-            fields: {
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The email address is required and cannot be empty'
-                        },
-                        emailAddress: {
-                            message: 'The email address is not valid'
-                        }
-                    }
-                }
-            }
+            //$('#contactform').bootstrapValidator('resetForm', true);
         });
 
     });

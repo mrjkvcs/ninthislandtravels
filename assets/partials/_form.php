@@ -22,10 +22,10 @@ $datas = [
                 <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
 
-            <form id="loginForm" action="paypal.php" method="post">
+            <form id="IDofyourform" action="paypal.php" method="post">
+
                 <input type="hidden" name="product_id" id="productId" />
                 <div class="modal-body">
-                    <div id="messages"></div>
                     <?php foreach (array_chunk($datas, 3) as $dataSet): ?>
                         <div class="row">
                             <?php foreach ($dataSet as $data): ?>
@@ -39,13 +39,18 @@ $datas = [
                                                 <?php endforeach; ?>
                                             </select>
                                         <?php else: ?>
-                                            <input type="<?= $data['type']; ?>" class="form-control" name="<?= $data['id'] ?>" data-fv-field="<?= $data['id']; ?>" >
+                                            <input type="<?= $data['type']; ?>" class="form-control" name="<?= $data['id'] ?>" >
                                         <?php endif; ?>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>
+                    <div class="form-group">
+                        <div class="col-xs-9 col-xs-offset-3">
+                            <ul id="messages"></ul>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer">

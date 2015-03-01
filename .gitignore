@@ -7,3 +7,4 @@ package.json
 vendor/
 .DS_Store
 config/database.php
+classes/PaypalConfig.php
