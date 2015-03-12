@@ -57,13 +57,13 @@ require('config/database.php');
             <h1> Our current offers</h1>
         </div>
         <div class="col-md-6 mb-30">OUR SPECIALS <br/> AT THE WORLD FAMOUS THE GRAND HOTEL IN DOWNTOWN LAS VEGAS</div>
-        <div class="col-md-6 hidden-xs">OUR SPECIALS <br/> AT THE NEWLY REMODELED TROPICANA HOTEL RIGHT ON THE STRIP</div>
+        <div class="col-md-6 hidden-xs hidden-sm">OUR SPECIALS <br/> AT THE NEWLY REMODELED TROPICANA HOTEL RIGHT ON THE STRIP</div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <?php foreach (Product::all() as $key => $product): ?>
                 <?php if ($key == 2): ?>
-                    <div class="col-md-6 text-center mb-30 ">OUR SPECIALS <br/> AT THE NEWLY REMODELED TROPICANA HOTEL RIGHT ON THE STRIP</div>
+                    <div class="col-md-6 text-center mb-30 hidden-md hidden-lg ">OUR SPECIALS <br/> AT THE NEWLY REMODELED TROPICANA HOTEL RIGHT ON THE STRIP</div>
                 <?php endif; ?>
                 <div class="col-md-3">
                     <div class="thumbnail text-center">
