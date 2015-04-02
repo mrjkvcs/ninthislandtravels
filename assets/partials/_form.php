@@ -5,6 +5,7 @@ $datas = [
     [ 'id' => 'middle_name', 'title' => 'Middle Name', 'type' => 'text' ],
     [ 'id' => 'last_name', 'title' => 'Last Name', 'type' => 'text' ],
     [ 'id' => 'birthdate_at', 'title' => 'Date of Birth', 'type' => 'date' ],
+    [ 'id' => 'checkin_at', 'title' => 'Check-in', 'type' => 'date' ],
     [ 'id' => 'gender', 'title' => 'Gender', 'type' => 'select', 'options' => ['Female', 'Male'] ],
     [ 'id' => 'nationality', 'title' => 'Nationality', 'type' => 'text' ],
     [ 'id' => 'email', 'title' => 'Email', 'type' => 'email' ],
