@@ -81,6 +81,7 @@ class Payment {
         \Payment::create([
             'user_id'          => $_SESSION['data']['user_id'],
             'product_id'       => $_SESSION['data']['product_id'],
+            'checkin_at'       => $_SESSION['data']['checkin_at'],
             'transaction_id'   => $data['PAYMENTINFO_0_TRANSACTIONID'],
             'transaction_type' => $data['PAYMENTINFO_0_TRANSACTIONTYPE'],
             'order_time'       => $data['PAYMENTINFO_0_ORDERTIME'],

@@ -18,5 +18,6 @@ class Payment extends Eloquent {
         'merchant_id',
         'error_code',
         'ack',
+        'checkin_at'
     ];
 }
